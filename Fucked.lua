@@ -6,15 +6,6 @@ local credits = Instance.new("TextLabel")
 local target = Instance.new("TextBox")
 local queue = Instance.new("TextLabel")
 local rename = Instance.new("TextButton")
-local ignore = {"Signals", "RobloxReplicatedStorage", "DefaultChatSystemEvents"}
-
-local find = function(sub, str)
-	for i,v in pairs(sub) do
-		if v:find(str) or v == str then
-			return v
-		end
-	end
-end
 
 --Properties:
 main.Name = "main"
