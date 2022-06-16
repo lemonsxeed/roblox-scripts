@@ -1,3 +1,15 @@
+-- anticheat bypass
+getgenv().BypassSettings = {
+   ["Crystal AntiCheat"] = true,
+   ["Adonis"] = true,
+   ["Anti-Obfuscated Scripts"] = false,
+   ["Random"] = true,
+   ["Enable Kill Logs"] = false,
+}
+
+loadstring(game:HttpGet("https://irisapp.ca/TheGoodSucc/iAntiCheat.lua"))()
+
+-- // clones tools and parents them
 for i,v in pairs(game:GetDescendants()) do
     if v:IsA("Tool") then
         local tool = v:Clone()
@@ -5,6 +17,7 @@ for i,v in pairs(game:GetDescendants()) do
     end
 end
 
+-- // teleports to tool
 workspace.ChildAdded:Connect(function(child)
     if child:IsA("Tool") then
         local handle = child:WaitForChild("Handle")
