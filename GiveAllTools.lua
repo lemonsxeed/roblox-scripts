@@ -1,15 +1,15 @@
--- anticheat bypass
 getgenv().BypassSettings = {
    ["Crystal AntiCheat"] = true,
    ["Adonis"] = true,
-   ["Anti-Obfuscated Scripts"] = false,
-   ["Random"] = true,
-   ["Enable Kill Logs"] = false,
+
+   ["Anti-Obfuscated Scripts"] = true,-- CANNOT BE ENABLED WITH CRYSTAL This will block any obfuscated script on the client from running (Not executed by your exploit thought)
+   ["Random"] = true, -- Will disallow scripts calling, GetPropertyChanged signal on WalkSpeed, JumpPower, Gravity, Health, LogService
+
+   ["Enable Kill Logs"] = true, -- Say if you want to get told what's bypassed
 }
 
 loadstring(game:HttpGet("https://irisapp.ca/TheGoodSucc/iAntiCheat.lua"))()
 
--- // clones tools and parents them
 for i,v in pairs(game:GetDescendants()) do
     if v:IsA("Tool") then
         local tool = v:Clone()
@@ -17,7 +17,6 @@ for i,v in pairs(game:GetDescendants()) do
     end
 end
 
--- // teleports to tool
 workspace.ChildAdded:Connect(function(child)
     if child:IsA("Tool") then
         local handle = child:WaitForChild("Handle")
